@@ -1,11 +1,32 @@
 #!/usr/bin/env node
-import { cpSync, readFileSync, writeFileSync, chmodSync, existsSync } from "node:fs";
+import { cpSync, mkdirSync, readFileSync, writeFileSync, chmodSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createInterface } from "node:readline";
 
 const TEMPLATES_DIR = join(fileURLToPath(import.meta.url), "../templates");
 const PRESETS = ["server", "library"];
+
+const CHECK_BRANCH_SCRIPT = `\
+#!/usr/bin/env bash
+set -euo pipefail
+
+BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "")
+
+# Exempt protected branches
+case "$BRANCH" in
+  main|master|develop|release/*|hotfix/*|changeset-release/*)
+    exit 0
+    ;;
+esac
+
+# Validate pattern: <type>/<issue>-<description>
+if ! echo "$BRANCH" | grep -qE '^[a-z]+/[0-9]+-[a-z0-9-]+$'; then
+  echo "Branch name '$BRANCH' does not match required pattern: <type>/<issue>-<description>"
+  echo "Examples: feat/123-add-login, fix/456-null-pointer"
+  exit 1
+fi
+`;
 
 async function ask(question) {
   const rl = createInterface({ input: process.stdin, output: process.stdout });
@@ -53,7 +74,11 @@ for (const file of ["package.json", "tsconfig.json"]) {
   );
 }
 
-chmodSync(join(targetDir, "scripts/check-branch-name.sh"), 0o755);
+const scriptsDir = join(targetDir, "scripts");
+mkdirSync(scriptsDir, { recursive: true });
+const checkBranchPath = join(scriptsDir, "check-branch-name.sh");
+writeFileSync(checkBranchPath, CHECK_BRANCH_SCRIPT);
+chmodSync(checkBranchPath, 0o755);
 
 console.log(`\nCreated ${projectName} (${preset})`);
 console.log(`\n  cd ${projectName}\n  pnpm install`);
