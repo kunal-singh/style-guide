@@ -1,18 +1,19 @@
-# @kunal/prettier-config
+# @kunal-singh/prettier-config
 
 Shared Prettier configuration.
 
 ## Usage
 
 Install:
+
 ```sh
-npm install -D @kunal/prettier-config prettier
+npm install -D @kunal-singh/prettier-config prettier
 ```
 
 In `prettier.config.js`:
 
 ```js
-import config from "@kunal/prettier-config";
+import config from "@kunal-singh/prettier-config";
 
 export default config;
 ```
@@ -21,6 +22,6 @@ Or reference it by name in `package.json` (note: this form does not support over
 
 ```json
 {
-  "prettier": "@kunal/prettier-config"
+  "prettier": "@kunal-singh/prettier-config"
 }
 ```
