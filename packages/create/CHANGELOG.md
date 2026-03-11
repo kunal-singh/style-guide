@@ -1,5 +1,11 @@
 # @kunal-singh/create
 
+## 0.1.2
+
+### Patch Changes
+
+- [#9](https://github.com/kunal-singh/style-guide/pull/9) [`3caa91e`](https://github.com/kunal-singh/style-guide/commit/3caa91ec85ae0badf0b2832461f833ab9232e056) Thanks [@kunal-singh](https://github.com/kunal-singh)! - updated create script
+
 ## 0.1.1
 
 ### Patch Changes
