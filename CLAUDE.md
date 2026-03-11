@@ -4,19 +4,19 @@ Personal config monorepo. Publishes five scoped npm packages under `@kunal-singh
 
 ## Packages
 
-| Package                          | Description                                             |
-| -------------------------------- | ------------------------------------------------------- |
-| `@kunal-singh/typescript-config` | Shared tsconfig presets (`base`, `server`, `library`)   |
-| `@kunal-singh/eslint-config`     | Shared ESLint v9 flat config presets (`base`, `server`) |
-| `@kunal-singh/prettier-config`   | Shared Prettier config                                  |
-| `@kunal-singh/commitlint-config` | Shared commitlint config (conventional commits)         |
-| `@kunal-singh/init`              | CLI that scaffolds all of the above into a new project  |
+| Package                          | Description                                                     |
+| -------------------------------- | --------------------------------------------------------------- |
+| `@kunal-singh/typescript-config` | Shared tsconfig presets (`base`, `server`, `library`)           |
+| `@kunal-singh/eslint-config`     | Shared ESLint v9 flat config presets (`base`, `server`)         |
+| `@kunal-singh/prettier-config`   | Shared Prettier config                                          |
+| `@kunal-singh/commitlint-config` | Shared commitlint config (conventional commits)                 |
+| `@kunal-singh/create`            | `npm create` script that scaffolds a new project from templates |
 
 ## Stack
 
 - **pnpm workspaces** — package management and monorepo linking
 - **Changesets** — versioning and changelog generation
-- **tsup** — only used in `packages/init` (the only package with a build step)
+- **tsup** — used in consumer projects scaffolded by `packages/create`; no package in this repo has a build step
 - **lefthook** — git hooks (pre-commit, commit-msg, pre-push)
 - **ESLint v9 flat config** — no legacy `.eslintrc`
 
@@ -29,9 +29,8 @@ Enforced by `scripts/check-branch-name.sh` on pre-push via lefthook.
 ## Key conventions
 
 - ESM only (`"type": "module"`) across all packages
-- Config packages publish as source — no build step
-- `packages/init` is the only package that compiles TypeScript to `dist/`
-- All packages dogfood each other via `workspace:*` during development
+- All packages publish as source — no build step
+- Root dogfoods `@kunal-singh/commitlint-config` and `@kunal-singh/prettier-config` via `workspace:*`
 - Changesets rewrites `workspace:*` to real semver at publish time
 - `module: preserve` + `moduleResolution: bundler` + `noEmit: true` in all tsconfigs — tsup handles emit in consumer projects
 
@@ -51,5 +50,6 @@ Enforced by `scripts/check-branch-name.sh` on pre-push via lefthook.
 
 1. Add the config file to the relevant package (e.g. `packages/eslint-config/react.js`)
 2. Add the export to that package's `package.json` exports map
-3. Update `packages/init/src/setup/` to reference the new preset where relevant
-4. Run `pnpm changeset` to document the change
+3. Add a new template directory under `packages/create/templates/<preset>/` with all required files
+4. Register the preset name in `packages/create/create.js` (`PRESETS` array and `PRESET_MAP`)
+5. Run `pnpm changeset` to document the change
