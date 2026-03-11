@@ -37,22 +37,15 @@ Enforced by `scripts/check-branch-name.sh` on pre-push via lefthook.
 
 ## Release workflow
 
-```bash
-pnpm changeset       # describe what changed and which packages are affected
-# open PR, merge to main
-# Changesets action opens a "Version Packages" PR automatically
-# merge that PR → packages publish to npm automatically
-```
+1. Make code changes in a branch
+2. `pnpm changeset` — select affected packages, pick bump type, write summary
+3. Commit the generated `.changeset/*.md` file alongside the code changes
+4. Open PR → merge to `main`
+5. Changesets action opens a **"Version Packages" PR** (bumps `package.json` versions, generates changelogs, deletes the `.changeset/*.md` file)
+6. Review and merge that PR → action publishes to npm automatically
 
-## First publish (one-time)
-
-```bash
-pnpm install
-pnpm build
-pnpm changeset       # mark all packages as minor
-pnpm version
-pnpm release
-```
+**Never run `pnpm changeset version` locally** — that is what the "Version Packages" PR does.
+**Never run `pnpm release` locally** — that is what the action does after merging the "Version Packages" PR.
 
 ## Adding a new preset
 
