@@ -5,7 +5,7 @@ BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "")
 
 # Exempt protected branches
 case "$BRANCH" in
-  main|master|develop|release/*|hotfix/*)
+  main|master|develop|release/*|hotfix/*|changeset-release/*)
     exit 0
     ;;
 esac
