@@ -1,0 +1,21 @@
+{
+  "name": "@kunal-singh/create",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "create-kunal-singh": "./create.js"
+  },
+  "files": [
+    "create.js",
+    "templates"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kunal-singh/style-guide",
+    "directory": "packages/create"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

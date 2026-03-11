@@ -4,16 +4,12 @@
   "type": "module",
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "build": "pnpm -r --filter @kunal-singh/init build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "pnpm -r --filter @kunal-singh/init typecheck",
     "prepare": "lefthook install",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "pnpm build && changeset publish"
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "latest",
@@ -21,14 +17,9 @@
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@kunal-singh/commitlint-config": "workspace:*",
-    "@kunal-singh/eslint-config": "workspace:*",
     "@kunal-singh/prettier-config": "workspace:*",
-    "@kunal-singh/typescript-config": "workspace:*",
-    "eslint": "latest",
     "lefthook": "latest",
     "lint-staged": "latest",
-    "prettier": "latest",
-    "typescript": "latest",
-    "typescript-eslint": "latest"
+    "prettier": "latest"
   }
 }

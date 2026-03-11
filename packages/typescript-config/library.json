@@ -2,12 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./base.json",
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022"],
-    "module": "Node16",
-    "moduleResolution": "Node16",
     "declaration": true,
-    "declarationMap": true,
-    "composite": true
+    "declarationMap": true
   }
 }

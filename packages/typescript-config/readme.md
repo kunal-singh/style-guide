@@ -1,26 +1,27 @@
-# @kunal/typescript-config
+# @kunal-singh/typescript-config
 
 Shared TypeScript compiler configurations.
 
 ## Usage
 
 Install:
+
 ```sh
-npm install -D @kunal/typescript-config
+npm install -D @kunal-singh/typescript-config
 ```
 
 Extend in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@kunal/typescript-config/base"
+  "extends": "@kunal-singh/typescript-config/base"
 }
 ```
 
 ## Presets
 
-| Preset | Path | Use for |
-|--------|------|---------|
-| `base` | `@kunal/typescript-config/base` | Any TypeScript project |
-| `server` | `@kunal/typescript-config/server` | Node.js servers and scripts |
-| `library` | `@kunal/typescript-config/library` | Published packages |
+| Preset    | Path                                     | Use for                     |
+| --------- | ---------------------------------------- | --------------------------- |
+| `base`    | `@kunal-singh/typescript-config/base`    | Any TypeScript project      |
+| `server`  | `@kunal-singh/typescript-config/server`  | Node.js servers and scripts |
+| `library` | `@kunal-singh/typescript-config/library` | Published packages          |

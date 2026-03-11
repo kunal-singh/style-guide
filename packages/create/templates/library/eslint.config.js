@@ -1,7 +1,7 @@
 import config from "@kunal-singh/eslint-config/server";
-import tseslint from "typescript-eslint";
 
-export default tseslint.config(
+/** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
+export default [
   { ignores: ["**/*.config.js", "**/*.config.ts", "scripts/**", "dist/**"] },
   ...config,
   {
@@ -12,4 +12,4 @@ export default tseslint.config(
       },
     },
   },
-);
+];
