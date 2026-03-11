@@ -1,8 +1,23 @@
-import { writeFile } from 'node:fs/promises'
-import path from 'node:path'
+import { writeFile } from "node:fs/promises";
+import path from "node:path";
 
 export async function setupEslint(cwd: string = process.cwd()): Promise<void> {
-  const content = `import config from '@kunal-singh/eslint-config/server'\n\nexport default config\n`
+  const content = `import config from '@kunal-singh/eslint-config/server'
+import tseslint from 'typescript-eslint'
 
-  await writeFile(path.join(cwd, 'eslint.config.js'), content, 'utf-8')
+export default tseslint.config(
+  { ignores: ['**/*.config.js', '**/*.config.ts', 'scripts/**'] },
+  ...config,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+)
+`;
+
+  await writeFile(path.join(cwd, "eslint.config.js"), content, "utf-8");
 }
