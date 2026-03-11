@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kunal-singh/style-guide",
+    "directory": "packages/init"
+  },
   "publishConfig": {
     "access": "public"
   },
