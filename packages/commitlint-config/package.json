@@ -1,5 +1,5 @@
 {
-  "name": "@kunal/commitlint-config",
+  "name": "@kunal-singh/commitlint-config",
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
