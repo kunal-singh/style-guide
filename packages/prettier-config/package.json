@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kunal-singh/style-guide",
+    "directory": "packages/prettier-config"
+  },
   "publishConfig": {
     "access": "public"
   },
