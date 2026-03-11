@@ -3,9 +3,9 @@ import path from "node:path";
 
 export async function setupEslint(cwd: string = process.cwd()): Promise<void> {
   const content = `import config from '@kunal-singh/eslint-config/server'
-import tseslint from 'typescript-eslint'
 
-export default tseslint.config(
+/** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
+export default [
   { ignores: ['**/*.config.js', '**/*.config.ts', 'scripts/**', 'dist/**'] },
   ...config,
   {
@@ -16,7 +16,7 @@ export default tseslint.config(
       },
     },
   },
-)
+]
 `;
 
   await writeFile(path.join(cwd, "eslint.config.js"), content, "utf-8");
