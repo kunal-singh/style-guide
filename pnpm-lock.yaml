@@ -22,15 +22,9 @@ importers:
       "@kunal-singh/commitlint-config":
         specifier: workspace:*
         version: link:packages/commitlint-config
-      "@kunal-singh/eslint-config":
-        specifier: workspace:*
-        version: link:packages/eslint-config
       "@kunal-singh/prettier-config":
         specifier: workspace:*
         version: link:packages/prettier-config
-      "@kunal-singh/typescript-config":
-        specifier: workspace:*
-        version: link:packages/typescript-config
       lefthook:
         specifier: latest
         version: 2.1.3
