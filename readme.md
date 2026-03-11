@@ -81,28 +81,4 @@ pnpm add -D @kunal-singh/commitlint-config @commitlint/cli
 export { default } from '@kunal-singh/commitlint-config'
 ```
 
----
 
-## Contributing / Release workflow
-
-1. Make changes in a feature branch
-2. Run `pnpm changeset` and describe the change
-3. Open a PR — CI runs lint, typecheck, and build
-4. Merge to `main` — the Release workflow opens (or updates) a "Version Packages" PR
-5. Merge the Version PR — packages are published to npm automatically
-
----
-
-## First publish
-
-On a fresh repo before any release has run, publish manually once:
-
-```sh
-pnpm install
-pnpm build
-pnpm changeset
-pnpm changeset version
-npm publish --access public --workspaces
-```
-
-After that, all subsequent releases are handled by the Release workflow.
