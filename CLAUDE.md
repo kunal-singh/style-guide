@@ -4,13 +4,13 @@ Personal config monorepo. Publishes five scoped npm packages under `@kunal-singh
 
 ## Packages
 
-| Package | Description |
-|---|---|
-| `@kunal-singh/typescript-config` | Shared tsconfig presets (`base`, `server`, `library`) |
-| `@kunal-singh/eslint-config` | Shared ESLint v9 flat config presets (`base`, `server`) |
-| `@kunal-singh/prettier-config` | Shared Prettier config |
-| `@kunal-singh/commitlint-config` | Shared commitlint config (conventional commits) |
-| `@kunal-singh/init` | CLI that scaffolds all of the above into a new project |
+| Package                          | Description                                             |
+| -------------------------------- | ------------------------------------------------------- |
+| `@kunal-singh/typescript-config` | Shared tsconfig presets (`base`, `server`, `library`)   |
+| `@kunal-singh/eslint-config`     | Shared ESLint v9 flat config presets (`base`, `server`) |
+| `@kunal-singh/prettier-config`   | Shared Prettier config                                  |
+| `@kunal-singh/commitlint-config` | Shared commitlint config (conventional commits)         |
+| `@kunal-singh/init`              | CLI that scaffolds all of the above into a new project  |
 
 ## Stack
 
@@ -19,6 +19,12 @@ Personal config monorepo. Publishes five scoped npm packages under `@kunal-singh
 - **tsup** — only used in `packages/init` (the only package with a build step)
 - **lefthook** — git hooks (pre-commit, commit-msg, pre-push)
 - **ESLint v9 flat config** — no legacy `.eslintrc`
+
+## Branch naming
+
+Branches must follow `<type>/<issue>-<description>` (e.g. `feat/123-add-login`, `fix/456-null-pointer`).
+Protected branches (`main`, `master`, `develop`, `release/*`, `hotfix/*`) are exempt.
+Enforced by `scripts/check-branch-name.sh` on pre-push via lefthook.
 
 ## Key conventions
 
@@ -30,6 +36,7 @@ Personal config monorepo. Publishes five scoped npm packages under `@kunal-singh
 - `module: preserve` + `moduleResolution: bundler` + `noEmit: true` in all tsconfigs — tsup handles emit in consumer projects
 
 ## Release workflow
+
 ```bash
 pnpm changeset       # describe what changed and which packages are affected
 # open PR, merge to main
@@ -38,6 +45,7 @@ pnpm changeset       # describe what changed and which packages are affected
 ```
 
 ## First publish (one-time)
+
 ```bash
 pnpm install
 pnpm build
