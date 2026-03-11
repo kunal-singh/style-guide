@@ -6,7 +6,7 @@ export async function setupEslint(cwd: string = process.cwd()): Promise<void> {
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['**/*.config.js', '**/*.config.ts', 'scripts/**'] },
+  { ignores: ['**/*.config.js', '**/*.config.ts', 'scripts/**', 'dist/**'] },
   ...config,
   {
     languageOptions: {

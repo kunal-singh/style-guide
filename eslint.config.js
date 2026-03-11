@@ -15,6 +15,7 @@ export default tseslint.config(
       "packages/commitlint-config/**",
       "packages/typescript-config/**",
       "packages/init/tsup.config.ts",
+      "**/dist/**",
     ],
   },
   ...config,
