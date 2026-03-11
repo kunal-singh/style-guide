@@ -3,6 +3,7 @@ import { cpSync, mkdirSync, readFileSync, writeFileSync, chmodSync, existsSync }
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createInterface } from "node:readline";
+import { execSync } from "node:child_process";
 
 const TEMPLATES_DIR = join(fileURLToPath(import.meta.url), "../templates");
 const PRESETS = ["server", "library"];
@@ -73,6 +74,11 @@ for (const file of ["package.json", "tsconfig.json"]) {
       .replaceAll("{{PRESET}}", PRESET_MAP[preset]),
   );
 }
+
+execSync("git init", { cwd: targetDir, stdio: "ignore" });
+
+mkdirSync(join(targetDir, "src"), { recursive: true });
+writeFileSync(join(targetDir, "src", "index.ts"), "export {};\n");
 
 const scriptsDir = join(targetDir, "scripts");
 mkdirSync(scriptsDir, { recursive: true });
