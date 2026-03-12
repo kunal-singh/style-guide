@@ -39,7 +39,6 @@
     "lint-staged": "latest",
     "prettier": "latest",
     "tsup": "latest",
-    "typescript": "latest",
-    "typescript-eslint": "latest"
+    "typescript": "latest"
   }
 }
