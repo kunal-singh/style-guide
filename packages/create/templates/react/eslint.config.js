@@ -1,4 +1,4 @@
-import config from "@kunal-singh/eslint-config/server";
+import config from "@kunal-singh/eslint-config/react";
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export default [
