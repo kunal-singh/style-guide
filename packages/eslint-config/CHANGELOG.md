@@ -1,5 +1,11 @@
 # @kunal-singh/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- [#11](https://github.com/kunal-singh/style-guide/pull/11) [`bcd9fb9`](https://github.com/kunal-singh/style-guide/commit/bcd9fb9e21c5f6a773e213dc4cc2bee25a5c4fc4) Thanks [@kunal-singh](https://github.com/kunal-singh)! - added next and react presets and fixed issues
+
 ## 0.1.1
 
 ### Patch Changes
