@@ -19,7 +19,5 @@
     "noEmit": true,
 
     "lib": ["es2022"]
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "*.config.js"]
+  }
 }

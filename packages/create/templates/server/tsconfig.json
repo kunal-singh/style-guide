@@ -1,5 +1,3 @@
 {
-  "extends": "{{PRESET}}",
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "*.config.js"]
+  "extends": "{{PRESET}}"
 }

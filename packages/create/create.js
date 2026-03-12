@@ -6,7 +6,7 @@ import { createInterface } from "node:readline";
 import { execSync } from "node:child_process";
 
 const TEMPLATES_DIR = join(fileURLToPath(import.meta.url), "../templates");
-const PRESETS = ["server", "library"];
+const PRESETS = ["server", "library", "react", "nextjs"];
 
 const CHECK_BRANCH_SCRIPT = `\
 #!/usr/bin/env bash
@@ -42,6 +42,8 @@ async function ask(question) {
 const PRESET_MAP = {
   server: "@kunal-singh/typescript-config/server",
   library: "@kunal-singh/typescript-config/library",
+  react: "@kunal-singh/typescript-config/react",
+  nextjs: "@kunal-singh/typescript-config/nextjs",
 };
 
 const projectName = process.argv[2] ?? (await ask("Project name: "));
@@ -77,8 +79,16 @@ for (const file of ["package.json", "tsconfig.json"]) {
 
 execSync("git init", { cwd: targetDir, stdio: "ignore" });
 
-mkdirSync(join(targetDir, "src"), { recursive: true });
-writeFileSync(join(targetDir, "src", "index.ts"), "export {};\n");
+if (preset === "nextjs") {
+  mkdirSync(join(targetDir, "app"), { recursive: true });
+  writeFileSync(
+    join(targetDir, "app", "page.tsx"),
+    "export default function Page() {\n  return <main />;\n}\n",
+  );
+} else {
+  mkdirSync(join(targetDir, "src"), { recursive: true });
+  writeFileSync(join(targetDir, "src", "index.ts"), "export {};\n");
+}
 
 const scriptsDir = join(targetDir, "scripts");
 mkdirSync(scriptsDir, { recursive: true });

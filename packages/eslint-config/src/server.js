@@ -9,6 +9,9 @@ export default [
       globals: {
         ...globals.node,
       },
+      parserOptions: {
+        projectService: true,
+      },
     },
     rules: {
       // Node.js servers commonly use floating promises for fire-and-forget patterns;

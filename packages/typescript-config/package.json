@@ -13,11 +13,15 @@
   "exports": {
     "./base": "./base.json",
     "./server": "./server.json",
-    "./library": "./library.json"
+    "./library": "./library.json",
+    "./react": "./react.json",
+    "./nextjs": "./nextjs.json"
   },
   "files": [
     "base.json",
     "server.json",
-    "library.json"
+    "library.json",
+    "react.json",
+    "nextjs.json"
   ]
 }

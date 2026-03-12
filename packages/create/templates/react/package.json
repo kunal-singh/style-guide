@@ -1,0 +1,55 @@
+{
+  "name": "{{NAME}}",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepare": "lefthook install"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@kunal-singh/typescript-config": "latest",
+    "@kunal-singh/eslint-config": "latest",
+    "@kunal-singh/prettier-config": "latest",
+    "@kunal-singh/commitlint-config": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-jsx-a11y": "latest",
+    "lefthook": "latest",
+    "lint-staged": "latest",
+    "prettier": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tsup": "latest",
+    "typescript": "latest"
+  }
+}
