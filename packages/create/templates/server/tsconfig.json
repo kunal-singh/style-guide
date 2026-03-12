@@ -1,3 +1,5 @@
 {
-  "extends": "{{PRESET}}"
+  "extends": "{{PRESET}}",
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

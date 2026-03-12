@@ -16,6 +16,8 @@ The preset argument is optional — you will be prompted if omitted.
 | --------- | --------------------------------------- |
 | `server`  | Node.js / backend services              |
 | `library` | Publishable packages and shared modules |
+| `react`   | React component libraries               |
+| `nextjs`  | Next.js apps                            |
 
 ## What gets scaffolded
 
