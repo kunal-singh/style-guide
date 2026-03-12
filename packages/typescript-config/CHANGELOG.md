@@ -1,5 +1,11 @@
 # @kunal-singh/typescript-config
 
+## 0.2.1
+
+### Patch Changes
+
+- [#13](https://github.com/kunal-singh/style-guide/pull/13) [`b004db3`](https://github.com/kunal-singh/style-guide/commit/b004db3c81d6d09154e056a0cf7a75a558fb75c8) Thanks [@kunal-singh](https://github.com/kunal-singh)! - fixed configs
+
 ## 0.2.0
 
 ### Minor Changes
