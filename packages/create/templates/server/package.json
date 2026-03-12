@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@kunal-singh/typescript-config": "latest",
+    "@types/node": "latest",
     "@kunal-singh/eslint-config": "latest",
     "@kunal-singh/prettier-config": "latest",
     "@kunal-singh/commitlint-config": "latest",
@@ -39,7 +40,6 @@
     "lint-staged": "latest",
     "prettier": "latest",
     "tsup": "latest",
-    "typescript": "latest",
-    "typescript-eslint": "latest"
+    "typescript": "latest"
   }
 }
