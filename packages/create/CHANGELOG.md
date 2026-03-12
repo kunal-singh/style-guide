@@ -1,5 +1,11 @@
 # @kunal-singh/create
 
+## 0.2.2
+
+### Patch Changes
+
+- [#15](https://github.com/kunal-singh/style-guide/pull/15) [`e92c0e2`](https://github.com/kunal-singh/style-guide/commit/e92c0e29982f4279cf49428513031c9a40d51c5b) Thanks [@kunal-singh](https://github.com/kunal-singh)! - fixed for ci
+
 ## 0.2.1
 
 ### Patch Changes
