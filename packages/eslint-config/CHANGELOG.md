@@ -1,5 +1,11 @@
 # @kunal-singh/eslint-config
 
+## 0.2.3
+
+### Patch Changes
+
+- [#17](https://github.com/kunal-singh/style-guide/pull/17) [`6c6d5b9`](https://github.com/kunal-singh/style-guide/commit/6c6d5b9659ef00050c0066074fb3ec8e589893cd) Thanks [@kunal-singh](https://github.com/kunal-singh)! - added react app preset
+
 ## 0.2.2
 
 ### Patch Changes
