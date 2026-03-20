@@ -15,6 +15,7 @@
     "./server": "./server.json",
     "./library": "./library.json",
     "./react": "./react.json",
+    "./react-app": "./react-app.json",
     "./nextjs": "./nextjs.json"
   },
   "files": [
@@ -22,6 +23,7 @@
     "server.json",
     "library.json",
     "react.json",
+    "react-app.json",
     "nextjs.json"
   ]
 }
