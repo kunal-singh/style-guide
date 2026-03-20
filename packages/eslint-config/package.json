@@ -15,6 +15,7 @@
     ".": "./src/index.js",
     "./server": "./src/server.js",
     "./react": "./src/react.js",
+    "./react-app": "./src/react-app.js",
     "./nextjs": "./src/nextjs.js"
   },
   "files": [
@@ -25,7 +26,8 @@
     "eslint-plugin-react": ">=7.37.0",
     "eslint-plugin-react-hooks": ">=5.0.0",
     "eslint-plugin-jsx-a11y": ">=6.10.0",
-    "next": ">=14.0.0"
+    "next": ">=14.0.0",
+    "eslint-plugin-react-refresh": ">=0.4.0"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-react": {
@@ -38,6 +40,9 @@
       "optional": true
     },
     "next": {
+      "optional": true
+    },
+    "eslint-plugin-react-refresh": {
       "optional": true
     }
   },
@@ -52,6 +57,7 @@
     "eslint": "^9.0.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-react": "^7.37.0",
-    "eslint-plugin-react-hooks": "^5.0.0"
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.5.0"
   }
 }
