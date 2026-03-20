@@ -1,5 +1,11 @@
 # @kunal-singh/eslint-config
 
+## 0.2.4
+
+### Patch Changes
+
+- [#19](https://github.com/kunal-singh/style-guide/pull/19) [`1b3019f`](https://github.com/kunal-singh/style-guide/commit/1b3019fd3d495bd94278fe105e4eb9adc5777306) Thanks [@kunal-singh](https://github.com/kunal-singh)! - updated peer deps
+
 ## 0.2.3
 
 ### Patch Changes
